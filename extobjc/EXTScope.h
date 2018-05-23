@@ -93,7 +93,11 @@ _Pragma("clang diagnostic pop")
 #endif
 
 /*** implementation details follow ***/
+#pragma clang diagnostic push
+
+#pragma clang diagnostic ignored "-Wstrict-prototypes"
 typedef void (^ext_cleanupBlock_t)();
+#pragma clang diagnostic pop
 
 void ext_executeCleanupBlock (__strong ext_cleanupBlock_t *block);
 
